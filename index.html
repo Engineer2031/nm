@@ -1,72 +1,255 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NerdMiner - Майнінг на ESP</title>
-    <meta name="description" content="NerdMiner - це компактний майнер на базі ESP плат для ефективного майнінгу криптовалют.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Asic Bitcoin NerdMiner micro - Найменший і найдешевший біткойн-майнер</title>
+    
+    <!-- Мета-теги для поисковых систем (украинский язык) -->
+    <meta name="description" content="NerdMiner micro — найменший і найдешевший лоторейний біткойн-майнер у світі. Використовуйте його для участі в майнінгу та можливості виграти блок.">
+    <meta name="keywords" content="NerdMiner micro, біткойн-майнер, лоторейний майнінг, найменший майнер, найдешевший майнер, ASIC майнер, біткойн, майнінг, криптовалюта, Bitcoin">
+    
+    <!-- Мета-теги для поисковых систем (русский язык) -->
+    <meta name="description" lang="ru" content="NerdMiner micro — самый маленький и дешевый лотерейный биткойн-майнер в мире. Используйте его для участия в майнинге и возможности выиграть блок.">
+    <meta name="keywords" lang="ru" content="NerdMiner micro, биткойн-майнер, лотерейный майнинг, самый маленький майнер, самый дешевый майнер, ASIC майнер, биткойн, майнинг, криптовалюта, Bitcoin">
+    
+    <!-- Open Graph теги для социальных сетей -->
+    <meta property="og:title" content="Asic Bitcoin NerdMiner micro - Найменший і найдешевший біткойн-майнер">
+    <meta property="og:description" content="NerdMiner micro — найменший і найдешевший лоторейний біткойн-майнер у світі. Використовуйте його для участі в майнінгу та можливості виграти блок.">
+    <meta property="og:image" content="https://nerdminer.pp.ua/Gallery/800-600.jpg">
+    <meta property="og:url" content="https://nerdminer.pp.ua">
+    <meta property="og:type" content="website">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: #00695c;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        h1:hover, h2:hover, h3:hover {
+            color: #004d40;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .price {
+            font-size: 1.5em;
+            color: #d32f2f;
+        }
+        .buy-button {
+            background-color: #00695c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #004d40;
+        }
+        .faq-item {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            color: #00695c;
+            transition: color 0.3s ease;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .faq-question:hover {
+            color: #004d40;
+        }
+        .content {
+            display: none;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left; /* Вирівнювання по лівому краю */
+        }
+
+        /* Додаємо стилі для адаптивного відео */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* 16:9 aspect ratio */
+            margin: 20px 0;
+        }
+        .video-container.vertical {
+            padding-bottom: 56.25%; /* 9:16 aspect ratio */
+        }
+        .video-container wistia-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Медіа-запити для різних розмірів екрану */
+        @media (min-width: 768px) {
+            .video-container.vertical {
+                padding-bottom: 177.78%; /* 16:9 aspect ratio for desktop */
+            }
+        }
+    </style>
+    <script>
+        function toggleContent(event) {
+            const content = event.currentTarget.nextElementSibling;
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleAnswer(event) {
+            const answer = event.currentTarget.nextElementSibling;
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>NerdMiner</h1>
-            <p>Майнінг на базі ESP плат</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">Про нас</a></li>
-                    <li><a href="#products">Продукція</a></li>
-                    <li><a href="#contact">Контакти</a></li>
-                </ul>
-            </nav>
+    <div class="container">
+        <h1 onclick="toggleContent(event)">Asic Bitcoin NerdMiner micro - Найменший і найдешевший лоторейний біткойн-майнер у світі</h1>
+        <div class="content">
+            <p class="price">Ціна: 634 грн</p>
+            <p>NerdMiner micro — це найменший і найдешевший лоторейний біткойн-майнер у світі. З ним у вас є можливість виграти винагороду за повний блок у розмірі 3,125 біткойна кожні 10 хвилин, споживаючи лише 0,3 Вт. Це справжнє втілення «лотерейного майнінгу».</p>
         </div>
-    </header>
+        
+        <img src="https://nerdminer.pp.ua/Gallery/800-600.jpg" alt="NerdMiner micro" class="product-image">
+        
+        <h2>Ключові переваги:</h2>
+        <ul>
+            <li>✅ Найменший і найдешевший біткойн-майнер у світі</li>
+            <li>✅ Можливість виграти 3,125 біткойна кожні 10 хвилин</li>
+            <li>✅ Низьке енергоспоживання: 0,3 Вт</li>
+            <li>✅ Використовує двухядерний модуль, схожий на NerdMinerV2, але без екрану</li>
+            <li>✅ Невеликий розмір і тиха робота</li>
+            <li>✅ Простий у використанні: підключіть до Wi-Fi, введіть біткойн-адресу та почніть майнінг</li>
+            <li>✅ Ідеальний для колекціонерів і шанувальників майнингової справи</li>
+            <li>✅ Навчальний інструмент завдяки програмному забезпеченню з відкритим вихідним кодом від Bitmaker</li>
+        </ul>
 
-    <section id="about">
-        <div class="container">
-            <h2>Про NerdMiner</h2>
-            <p>NerdMiner - це компактний пристрій для майнінгу криптовалют, який працює на базі ESP мікроконтролерів. Він ідеально підходить для ентузіастів, які хочуть дізнатися більше про майнінг та блокчейн-технології.</p>
-            <img src="https://via.placeholder.com/800x400" alt="NerdMiner пристрій" class="about-image">
-        </div>
-    </section>
-
-    <section id="products">
-        <div class="container">
-            <h2>Наша Продукція</h2>
-            <div class="product-list">
-                <div class="product">
-                    <h3>NerdMiner ESP32</h3>
-                    <img src="https://via.placeholder.com/400x300" alt="NerdMiner ESP32" class="product-image">
-                    <p>Потужний майнер на базі ESP32 з підтримкою Wi-Fi та Bluetooth.</p>
-                    <p class="price">Ціна: $49.99</p>
-                    <button>Купити зараз</button>
+        <h2 onclick="toggleContent(event)">Часті питання</h2>
+        <div class="content">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Скільки заробляє майнер в місяць?</div>
+                <div class="faq-answer">NerdMiner micro призначений для участі в майнінгу та можливості виграти блок, а не для отримання стабільного прибутку. Реальний дохід буде дуже низьким або нульовим, оскільки це пристрій з мінімальною потужністю.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Як налаштувати пристрій?</div>
+                <div class="faq-answer">Пристрій створить мережу Wi-Fi. 
+                    <br>AP: NerdMinerAP
+                    <br>PASS: MineYourCoins
+                    <br>Підключіться до цієї мережі, вас перекине на сторінку налаштувань 192.168.4.1
+                    <br>Вкажіть свій Wi-Fi та пароль
+                    <br>Вкажіть свій BTC гаманець
+                    <br>Примітка: якщо BTC-адреса вибраного гаманця не вказана, майнінг не розпочнеться.
+                    <br>Просто підключіть його до USB.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Як скинути налаштування?</div>
+                <div class="faq-answer">Для скидання налаштувань натисніть кнопку boot на пристрої , утримуючи кнопку 10 секунд. Також можна вимкнути Wi-Fi роутер або відійти від нього, щоб пристрій знову створив мережу NerdMinerAP для переналаштування. Також можна перепрошити через <a href="https://espressif.github.io/esptool-js/" target="_blank">цей інструмент</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Де я можу перевірити роботу майнера?</div>
+                <div class="faq-answer">Ви можете перевірити статус вашого майнера на сайті пулу:
+                    <ul>
+                        <li><a href="https://web.public-pool.io" target="_blank">web.public-pool.io</a></li>
+                        <li><a href="https://nerdminers.org" target="_blank">nerdminers.org</a></li>
+                        <li><a href="https://nerdminer.io" target="_blank">nerdminer.io</a></li>
+                        <li><a href="https://pool.pyblock.xyz/" target="_blank">pool.pyblock.xyz</a></li>
+                        <li><a href="https://pool.sethforprivacy.com/" target="_blank">pool.sethforprivacy.com</a></li>
+                    </ul>
                 </div>
-                <div class="product">
-                    <h3>NerdMiner ESP8266</h3>
-                    <img src="https://via.placeholder.com/400x300" alt="NerdMiner ESP8266" class="product-image">
-                    <p>Економічний варіант на базі ESP8266 для початківців у майнінгу.</p>
-                    <p class="price">Ціна: $29.99</p>
-                    <button>Купити зараз</button>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Шанс виграшу</div>
+                <div class="faq-answer">Ймовірність виграшу в розіграші біткойн-блоків залежить від кількості учасників та загальної потужності мережі. Припустимо, загальна потужність мережі становить 250 EH/s, тоді ймовірність виграшу для NerdMiner micro можна оцінити так:
+                    <p><strong>Ймовірність виграшу = (Ваша потужність) / (Загальна потужність мережі)</strong></p>
+                    <p><strong>Ймовірність виграшу = 78 KH/s / 250,000,000 KH/s = 0.000000312 (або 0.0000312%).</strong></p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Час виграшу блоку</div>
+                <div class="faq-answer">Час, необхідний для виграшу блоку в біткойн-мережі, є випадковим і залежить від кількох факторів:
+                    <ul>
+                        <li>Середній час генерації блоку: приблизно 10 хвилин.</li>
+                        <li>Ваша потужність: 78 KH/s.</li>
+                        <li>Загальна потужність мережі: близько 250 EH/s.</li>
+                    </ul>
+                    <p>Середній час виграшу = (Середній час генерації блоку) / (Ваша ймовірність виграшу)</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Висновок</div>
+                <div class="faq-answer">NerdMiner micro — це компактний ASIC-майнер, який пропонує унікальну можливість для ентузіастів криптовалют. Це чудова можливість для новачків та досвідчених користувачів отримати новий досвід!</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Додаткова інформація</div>
+                <div class="faq-answer">NerdMiner micro — це не просто апаратне забезпечення, а навчальний інструмент завдяки програмному забезпеченню з відкритим вихідним кодом від Bitmaker. Пориньте у світ майнінгу біткойнів і збережіть цей захоплюючий шматок історії технологій прямо на вашому столі.
+                    <p>Приєднуйтесь до динамічної спільноти NerdMiner, де ентузіасти збираються разом, щоб досліджувати нюанси майнінгу біткойнів. З NerdMiner micro ви не просто інвестуєте в пристрій, а й починаєте домашню пригоду з видобутку біткойнів, яка є одночасно потужною та зручною для користувача.</p>
+                    
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Контакти</h2>
-            <p>Якщо у вас є питання або ви хочете дізнатися більше про наші продукти, зв'яжіться з нами:</p>
-            <ul>
-                <li>Email: <a href="mailto:info@nerdminer.com">info@nerdminer.com</a></li>
-                <li>Телефон: +380 123 456 789</li>
-            </ul>
-        </div>
-    </section>
+        <a href="https://www.olx.ua/d/uk/obyavlenie/pristry-dlya-zdobutku-IDXn8zG.html" target="_blank" class="buy-button">Купити з доставкою</a>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 NerdMiner. Усі права захищені.</p>
+        <!-- Відео Wistia -->
+        <div class="video-container">
+            <wistia-player media-id="28i81yod5m" wistia-popover="true"></wistia-player>
         </div>
-    </footer>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="https://nerdminer.pp.ua/Gallery" target="_blank" class="buy-button">.</a>
+        </div>
+    </div>
+
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/28i81yod5m.js" async type="module"></script>
+    <style>
+        wistia-player[media-id='28i81yod5m']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/28i81yod5m/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 177.78%;
+        }
+    </style>
+    
+    <script src="https://fast.wistia.net/player.js" async></script><div class="wistia_responsive_padding" style="padding:177.78% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/qn8z5cjq6j?web_component=true&seo=false" title="thekingfreshcomp_2024-12-17-13-32-36_1734435156895 Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%"></iframe></div></div>
+    
 </body>
 </html>
