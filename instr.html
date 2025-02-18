@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Fav Icon -->
+    <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Main css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Asic Bitcoin NerdMiner</title>
+</head>
+
+<body>
+    <main class="container">
+        <!-- Header start  -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fill">
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Продукти</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="instr">Інструкція</a>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Header end  -->
+
+        <h2>Ключові переваги:</h2>
+        <ul>
+            <li>✅ Найменший і найдешевший біткойн-майнер у світі</li>
+            <li>✅ Можливість виграти 3,125 біткойна кожні 10 хвилин</li>
+            <li>✅ Низьке енергоспоживання: 0,3 Вт</li>
+            <li>✅ Використовує двухядерний модуль, схожий на NerdMinerV2, але без екрану</li>
+            <li>✅ Невеликий розмір і тиха робота</li>
+            <li>✅ Простий у використанні: підключіть до Wi-Fi, введіть біткойн-адресу та почніть майнінг</li>
+            <li>✅ Ідеальний для колекціонерів і шанувальників майнингової справи</li>
+            <li>✅ Навчальний інструмент завдяки програмному забезпеченню з відкритим вихідним кодом від Bitmaker</li>
+        </ul>
+
+        <h2 onclick="toggleContent(event)">Часті питання</h2>
+        <div class="content">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Скільки заробляє майнер в місяць?</div>
+                <div class="faq-answer">NerdMiner micro призначений для участі в майнінгу та можливості виграти блок, а не для отримання стабільного прибутку. Реальний дохід буде дуже низьким або нульовим, оскільки це пристрій з мінімальною потужністю.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Як налаштувати пристрій?</div>
+                <div class="faq-answer">Пристрій створить мережу Wi-Fi. 
+                    <br>AP: NerdMinerAP
+                    <br>PASS: MineYourCoins
+                    <br>Підключіться до цієї мережі, вас перекине на сторінку налаштувань 192.168.4.1
+                    <br>Вкажіть свій Wi-Fi та пароль
+                    <br>Вкажіть свій BTC гаманець
+                    <br>Примітка: якщо BTC-адреса вибраного гаманця не вказана, майнінг не розпочнеться.
+                    <br>Просто підключіть його до USB.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Як скинути налаштування?</div>
+                <div class="faq-answer">Для скидання налаштувань натисніть кнопку boot на пристрої , утримуючи кнопку 10 секунд. Також можна вимкнути Wi-Fi роутер або відійти від нього, щоб пристрій знову створив мережу NerdMinerAP для переналаштування. Також можна перепрошити через <a href="https://espressif.github.io/esptool-js/" target="_blank">цей інструмент</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Де я можу перевірити роботу майнера?</div>
+                <div class="faq-answer">Ви можете перевірити статус вашого майнера на сайті пулу:
+                    <ul>
+                        <li><a href="https://web.public-pool.io" target="_blank">web.public-pool.io</a></li>
+                        <li><a href="https://nerdminers.org" target="_blank">nerdminers.org</a></li>
+                        <li><a href="https://nerdminer.io" target="_blank">nerdminer.io</a></li>
+                        <li><a href="https://pool.pyblock.xyz/" target="_blank">pool.pyblock.xyz</a></li>
+                        <li><a href="https://pool.sethforprivacy.com/" target="_blank">pool.sethforprivacy.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Шанс виграшу</div>
+                <div class="faq-answer">Ймовірність виграшу в розіграші біткойн-блоків залежить від кількості учасників та загальної потужності мережі. Припустимо, загальна потужність мережі становить 250 EH/s, тоді ймовірність виграшу для NerdMiner micro можна оцінити так:
+                    <p><strong>Ймовірність виграшу = (Ваша потужність) / (Загальна потужність мережі)</strong></p>
+                    <p><strong>Ймовірність виграшу = 78 KH/s / 250,000,000 KH/s = 0.000000312 (або 0.0000312%).</strong></p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Час виграшу блоку</div>
+                <div class="faq-answer">Час, необхідний для виграшу блоку в біткойн-мережі, є випадковим і залежить від кількох факторів:
+                    <ul>
+                        <li>Середній час генерації блоку: приблизно 10 хвилин.</li>
+                        <li>Ваша потужність: 78 KH/s.</li>
+                        <li>Загальна потужність мережі: близько 250 EH/s.</li>
+                    </ul>
+                    <p>Середній час виграшу = (Середній час генерації блоку) / (Ваша ймовірність виграшу)</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Висновок</div>
+                <div class="faq-answer">NerdMiner micro — це компактний ASIC-майнер, який пропонує унікальну можливість для ентузіастів криптовалют. Це чудова можливість для новачків та досвідчених користувачів отримати новий досвід!</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(event)">Додаткова інформація</div>
+                <div class="faq-answer">NerdMiner micro — це не просто апаратне забезпечення, а навчальний інструмент завдяки програмному забезпеченню з відкритим вихідним кодом від Bitmaker. Пориньте у світ майнінгу біткойнів і збережіть цей захоплюючий шматок історії технологій прямо на вашому столі.
+                    <p>Приєднуйтесь до динамічної спільноти NerdMiner, де ентузіасти збираються разом, щоб досліджувати нюанси майнінгу біткойнів. З NerdMiner micro ви не просто інвестуєте в пристрій, а й починаєте домашню пригоду з видобутку біткойнів, яка є одночасно потужною та зручною для користувача.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/29naBTOGbZ8?si=fPADEGt9GkfQGHha" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Footer start  -->
+        <footer>
+            <div class="text-center">
+                <strong>nerdminers.pp.ua</strong> &copy; All Right reserved
+            </div>
+        </footer>
+        <!-- End  -->
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
