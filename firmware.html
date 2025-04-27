@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Fav Icon -->
+    <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Main css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Asic Bitcoin NerdMiner</title>
+</head>
+
+<body>
+    <main class="container">
+        <!-- Header start  -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fill">
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Продукти</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="instr">Інструкція</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="firmware">Прошивка</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Header end  -->
+
+        <h1>Веб інсталятор прошивки NerdMiner</h1>
+    <p><strong>Рекомендовано для:</strong> просунутих користувачів.</p>
+
+    <ol>
+        <li>Підключіть пристрій до комп'ютера через USB. Натисніть кнопку "Install" нижче, виберіть потрібний порт та завантажте прошивку на пристрій.</li>
+        <li>Після першого запуску пристрій NerdMiner сам створить Wi-Fi мережу з іменем "NerdMinerAP" без паролю або паролем "MineYourCoins".</li>
+        <li>Підключіться до цієї мережі зі свого пристрою.</li>
+        <li>Вас автоматично переправить на сторінку пристрою. Якщо ні, відкрийте браузер та перейдіть за адресою: <a href="http://192.168.4.1" target="_blank">http://192.168.4.1</a>.</li>
+        <li>Заповніть форму налаштувань, ввівши SSID вашої Wi-Fi мережі, пароль, вкажіть адресу біткойн-гаманця, опціонально пулл та порт.</li>
+        <li>Натисніть "Save". Пристрій перезавантажиться та спробує підключитися до вказаної Wi-Fi мережі.</li>
+    </ol>
+
+  <h1>Install Firmware on nerdminer</h1>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <esp-web-install-button manifest="your-manifest.json"></esp-web-install-button>
+
+  <h2>Якщо пристрій не виявлено:</h2>
+  <ol>
+    <li>Переконайтеся, що пристрій підключений до комп'ютера, на якому запущений цей веб-сайт.</li>
+    <li>Перевірте світлодіод на пристрої (якщо він є) — він має світитися.</li>
+    <li>Переконайтеся, що використовується USB-кабель для передачі даних, а не лише для живлення.</li>
+    <li>Переконайтеся, що встановлені правильні драйвери:
+      <ul>
+        <li><strong>Драйвери для CH340, CH341:</strong> <a href="https://www.wch.cn/downloads/file/5.html?time=2024-09-08%2013:24:49&code=96ajwCs5bggNWZk4UvvU8ry0fgcM41o97r5y8lq2">Завантажити</a></li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><strong>Увага:</strong> Програмне забезпечення надається без гарантій. Використовуйте на свій страх і ризик. Адміністрація не несе відповідальності за пошкодження обладнання чи втрату даних.</p>
+
+  <p>Для купівлі прошитого пристрою, обговорення прошивки та отримання допомоги, перейдіть за посиланням: <a href="https://m.olx.ua/d/uk/obyavlenie/pristry-dlya-zdobutku-IDXEMuy.html" target="_blank">Обговорення прошивки</a>.</p>
+
+
+  <script>
+    // Перевірка підтримки Web Serial API
+    if (!('serial' in navigator)) {
+      alert('Ваш браузер не підтримує Web Serial API. Будь ласка, використовуйте сучасний браузер, такий як Google Chrome.');
+    }
+
+    // Додавання обробника події для перенаправлення після успішної прошивки
+    document.querySelector('esp-web-install-button').addEventListener('success', () => {
+      alert('Прошивка успішно завантажена!');
+      window.location.href = 'http://192.168.4.1/scan';
+    });
+
+    // Локалізація діалогових вікон
+    document.querySelector('esp-web-install-button').addEventListener('error', (event) => {
+      alert(`Помилка: ${event.detail.message}`);
+    });
+
+    document.querySelector('esp-web-install-button').addEventListener('progress', (event) => {
+      console.log(`Прогрес: ${event.detail.percentage}%`);
+    });
+  </script>
+
+        
+        <!-- Footer start  -->
+        <footer>
+            <div class="text-center">
+                <strong>nerdminers.pp.ua</strong> &copy; All Right reserved
+            </div>
+        </footer>
+        <!-- End  -->
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
